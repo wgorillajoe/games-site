@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Mason's Games</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Top Navigation Bar -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <a href="index.html">Games</a>
+    <a href="settings.html">Settings</a>
+    <a href="extra.html">Extra</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+
+<div class="container">
+  <h1>About</h1>
+
+  <div class="recent-box">
+    <h2>About This Site</h2>
+    <div class="about-box" style="padding:20px; border-radius:20px; background:rgba(255,255,255,0.08); backdrop-filter:blur(10px);">
+      <p>Welcome to Mason's Games! 🎮</p>
+      <p>This website is a hub for HTML, JS, and CSS games that you can play directly on your Chromebook. It's built with a clean, glassy style and is easy to use.</p>
+      <p>Features include:</p>
+      <ul>
+        <li>Auto-sorted games</li>
+        <li>Search bar to find games quickly</li>
+        <li>Recently Played section to track what you've played</li>
+        <li>Settings page with Dark Mode</li>
+      </ul>
+      <p>Have fun playing! 😎</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+
+<script>
+// Apply saved theme on page load
+const savedTheme = localStorage.getItem("siteTheme");
+if (savedTheme) {
+  document.body.classList.add(savedTheme);
+}
+
+// Listen for theme changes from other tabs/pages
+window.addEventListener('storage', () => {
+  // Remove all previous themes
+  document.body.classList.remove("midnight","orangeCream","space","tiktok","youtube");
+
+  // Apply the new theme
+  const newTheme = localStorage.getItem("siteTheme");
+  if(newTheme) document.body.classList.add(newTheme);
+});
+</script>
+
+</html>
